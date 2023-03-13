@@ -375,7 +375,9 @@
 | 333 | [What is a wrapper component ](#what-is-a-wrapper-component)                                                                                                                                                                     |
 | 334 | [What are the differences between useEffect and useLayoutEffect hooks](#what-are-the-differences-between-useEffect-and-useLayoutEffect-hooks)                                                                                    |
 | 335 | [What are the differences between Functional and Class Components ](#what-are-the-differences-between-functional-and-class-components)                                                                                           |
-| 336 | [Why does strict mode render twice in React?](#why-does-strict-mode-render-twice-in-react)                                                                                                                 |
+| 336 | [Why does strict mode render twice in React?](#why-does-strict-mode-render-twice-in-react)                                                                                                                                       | 
+| 337 | [When does a component rerenders in React?](#when-does-a-component-rerenders-in-react)                                                                                                                 |
+
 
 ## Core React
 
@@ -7133,6 +7135,20 @@ const loadUser = async () => {
     5. Functions passed to useState, useMemo, or useReducer (any Hook)
 
     **[⬆ Back to Top](#table-of-contents)**
+    
+337.  ## When does a component rerenders in React?
+    
+    In React, a component can re-render under various circumstances. Here are some of the events that can trigger a component to re-render:
+    1. Changes in props: If a component receives new props from its parent component, it will re-render to reflect the new data.
+    2. Changes in state: If a component updates its own state using the setState method, it will re-render to reflect the updated state.
+    3. Context changes: If a component uses the useContext hook to access data from a context provider and the data in the context changes, the component will re-render to reflect the updated data.
+    4. Force update: If a component calls the forceUpdate() method, it will re-render regardless of whether its props or state have changed.
+    5. Changes in window dimensions: If a component uses the useEffect hook with an empty dependency array ([]) to perform side effects based on window dimensions, it will re-render whenever the window dimensions change.
+    6. Changes in the component tree: If a parent component re-renders, all of its child components will also re-render to reflect any changes in props or state.
+    7. Changes in the app's global state: If the app's global state changes (e.g., using Redux or other state management libraries), components that depend on that state will re-render to reflect the updated data.
+    
+    **[⬆ Back to Top](#table-of-contents)**
+
 
 
 ## Disclaimer
